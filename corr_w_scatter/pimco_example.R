@@ -32,7 +32,12 @@ source("createJSON.R")
 #group by year for colors on scatterplot
 yeargroup <- as.numeric(format(index(pimco.roc),"%Y"))
 names(yeargroup) <- index(pimco.roc)
-pimco.toplot <- convert4corrwscatter(as.matrix(pimco.roc),yeargroup)
+#sort by correlation to VFINX instead of hclust method from Karl
+#get correlation table for sorting
+ca <- cor(pimco.roc)
+pimco.roc <- pimco.roc[,order(ca[,ncol(ca)])]
+
+pimco.toplot <- convert4corrwscatter(as.matrix(pimco.roc),yeargroup,reorder=FALSE)
 cat(pimco.toplot,file="pimco_data.json")
 
 
