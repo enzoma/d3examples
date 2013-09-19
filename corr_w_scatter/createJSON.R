@@ -43,7 +43,7 @@ function(dat, group, reorder=TRUE)
 #y <- convert4corrwscatter(z$x, z$group)
 
 # real data:
-load("example_data.RData")
-y <- convert4corrwscatter(x, group)
+#load("example_data.RData")
+#y <- convert4corrwscatter(x, group)
 
-cat(y, file="data.json")
+#cat(y, file="data.json")
