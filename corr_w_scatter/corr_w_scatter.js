@@ -97,12 +97,12 @@
       xticks = xScale.ticks(5);
       yticks = yScale.ticks(5);
       scatterplot.selectAll("empty").data(xticks).enter().append("text").attr("class", "axes").text(function(d) {
-        return d3.format(".2f")(d);
+        return d3.format(".2%")(d);
       }).attr("x", function(d) {
         return xScale(d);
       }).attr("y", h + pad.bottom * 0.3).attr("dominant-baseline", "middle").attr("text-anchor", "middle");
       scatterplot.selectAll("empty").data(yticks).enter().append("text").attr("class", "axes").text(function(d) {
-        return d3.format(".2f")(d);
+        return d3.format(".2%")(d);
       }).attr("x", -pad.left * 0.1).attr("y", function(d) {
         return yScale(d);
       }).attr("dominant-baseline", "middle").attr("text-anchor", "end");
