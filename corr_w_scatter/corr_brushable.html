@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Correlation matrix with linked scatterplot</title>
+  <link rel=stylesheet type="text/css" href="corr_w_scatter.css">
+  <script type="text/javascript" src="http://d3js.org/d3.v3.js"></script>
+  <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.no-responsive.no-icons.min.css" rel="stylesheet">
+<!-- <link rel="stylesheet" href="/css/bootstrap.min.css"> -->
+<link  rel="stylesheet" 
+    href="http://netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css">
+  <link rel="stylesheet" href="../libraries/frameworks/bootstrap/css/bootstrap-responsive.min.css">
+  
+  <link rel="stylesheet" href="../libraries/frameworks/bootstrap/css/main.css">
+  <link rel="stylesheet" href="../libraries/highlighters/prettify/css/twitter-bootstrap.css" />
+  <script src="../libraries/frameworks/bootstrap/js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="../libraries/frameworks/bootstrap/js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
+    <link rel=stylesheet href="http://fonts.googleapis.com/css?family=Raleway:300"></link>
+<link rel=stylesheet href="http://fonts.googleapis.com/css?family=Oxygen"></link>
+<style>
+body{
+  font-family: 'Oxygen', sans-serif;
+  font-size: 8px;
+  line-height: 15px;
+}
+
+h1,h2,h3,h4 {
+font-family: 'Raleway', sans-serif;
+}
+
+.container { width: 1200px; }
+
+h3 {
+background-color: #D4DAEC;
+  text-indent: 100px; 
+}
+
+h4 {
+text-indent: 100px;
+}
+
+.x.axis path,.y.axis path{
+  fill: none;
+  stroke: black;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<div class ="row">
+<div class = "span8">
+<h3>Correlation matrix with linked scatterplot</h3>
+</div>
+<div class = "span4 muted">
+<blockquote>Forked from <a href="http://github.com/kbroman/d3examples/tree/master/corr_w_scatter">github</a>, so many thanks to <a href = "http://www.biostat.wisc.edu/~kbroman">Karl Broman</a>.<br>
+Data source: Yahoo! Finance<br>
+Styling and layout: Bootstrap 3</br>
+</blockquote>
+</div>
+</div>
+<div class = "row">
+<div id="plot" class="span12"></div>
+</div>
+<div class = "row">
+<div class="span8 offset2">
+<p>The left panel is an image of a correlation matrix, with blue = -1 and red = +1.
+Hover over pixels in the correlation matrix on the left to see the values; click to see the corresponding scatterplot on the right.</p>
+</div>
+</div>
+</div>
+</div>
+
+<script type="text/javascript" src="corr_w_brush.js"></script>
+
+</body></html>
