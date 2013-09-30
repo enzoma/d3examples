@@ -126,7 +126,7 @@
       var cellsize = scatterplot.select("rect").attr("height") / Math.ceil(Math.sqrt(pairs[0].length));
 
       var scatterData = [];
-      pairs.data().sort(function compareNumbers(a, b) {return +b.row - a.row;}).forEach(function (d) {
+      pairs.data().sort(function compareNumbers(a, b) {return +b.row - a.row || +a.col - b.col;}).forEach(function (d) {
         var values = data.dat[d.row].map(function (dd, ii) {
           return { x: dd, y: data.dat[d.col][ii] };
         });
@@ -153,6 +153,7 @@
         .each(plot)
         .append("title")
 
+
         scatterCells.on("mouseover",function(d){
           d3.select("#corrplot").selectAll(".cell").filter(function(dd){
             return dd.row == d.row && dd.col == d.col;
@@ -166,10 +167,10 @@
         });
 
         scatterCells.select("title").text(function(d){
-          return data.var[d.col] + "~" +data.var[d.row]
+          return data.var[d.col] + "~" +data.var[d.row];
         });
 
-      scatterCells.exit().remove();
+        scatterCells.exit().remove();
 
       function plot(p) {
         var scatterX = d3.scale.linear().range([0, cellsize]);
